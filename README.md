@@ -64,6 +64,34 @@
   ```
 </p>
 
+<h2 align="left">
+  <b>Usage</b>
+</h2>
+
+<p align="left">
+  
+ ```sh
+    Archer V1.0
+     Usage: node index.js [filename] [statuscodetoquery] [outputtype]
+
+     FILENAME --
+     Specifies the file name containing the domain list along with its full location
+     Note: Make sure the data is stored in txt format
+     Example: /home/user/Desktop/file.txt
+
+     STATUS CODE TO QUERY --
+     Specifies the status codes you would like to be displayed
+     Example: 200/404/302/all
+
+     OUTPUT TYPE --
+     Specifies the format for the output which will be displayed
+     Example: string/json
+
+     EXAMPLE USAGE -- 
+     node index.js /home/user/Desktop/domains.txt 200 string
+  ```
+</p>
+
 
  <h2 align="left">
   <b>Wlling to Contribute?</b>
