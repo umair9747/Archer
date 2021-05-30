@@ -1,0 +1,19 @@
+{
+  "name": "archer",
+  "version": "1.0.0",
+  "description": "A Tool to Check for Response Status Codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "0x9747 <umairnehri9747@gmail.com> (https://umairnehri.in/)",
+  "license": "ISC",
+  "dependencies": {
+    "align-text": "^1.0.2",
+    "colors": "^1.4.0",
+    "figlet": "^1.5.0",
+    "readline": "^1.3.0",
+    "request": "^2.88.2",
+    "string-to-json": "^0.1.0"
+  }
+}
