@@ -90,6 +90,7 @@
      EXAMPLE USAGE -- 
      node index.js /home/user/Desktop/domains.txt 200 string
   ```
+  <b>NOTE: All flags are mandatory. Make sure that the links you provide have http:// or https:// added else Archer would return a "domain doesn't exists" error.</b>
 </p>
 
 
