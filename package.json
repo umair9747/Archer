@@ -4,8 +4,7 @@
   "description": "A Tool to Check for Response Status Codes",
   "main": "index.js",
   "scripts": {
-    "archer": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "archer": "node index.js"
   },
   "author": "0x9747 <0x9778@protonmail.com> (https://umairnehri.in/)",
   "license": "ISC",
