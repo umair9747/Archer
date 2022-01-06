@@ -82,7 +82,7 @@
   
  ```sh
     Archer V1.0
-     Usage: npm run archer -- [filename] [statuscodetoquery] [outputtype]
+     Usage: node index.js [filename] [statuscodetoquery] [outputtype]
      (The two dashes after 'start' are required.)
 
      FILENAME --
@@ -92,14 +92,14 @@
 
      STATUS CODE TO QUERY --
      Specifies the status codes you would like to be displayed
-     Example: 200/404/302/all
+     Example: 200/404/302/any
 
      OUTPUT TYPE --
      Specifies the format for the output which will be displayed
      Example: string/json
 
      EXAMPLE USAGE -- 
-     npm run archer -- /home/user/Desktop/domains.txt 200 string
+     node index.js /home/user/Desktop/domains.txt 200 string
   ```
   <b>NOTE: All flags are mandatory. Make sure that the links you provide have http:// or https:// added else Archer would return a "domain doesn't exist" error.</b>
 </p>
