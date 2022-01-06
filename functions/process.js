@@ -19,7 +19,7 @@ function process() {
   else if (input[0] === "--help" || input[0] === "-h") help.menu();
   else {
     if (input.length < 3) console.log("");
-    const { filename, statuscodetoquery, outputtype } = input.slice(0, 3);
+    const [filename, statuscodetoquery, outputtype] = input.slice(0, 3);
     request.processTargets(filename, statuscodetoquery, outputtype);
   }
 }
