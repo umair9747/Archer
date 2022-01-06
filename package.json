@@ -4,7 +4,7 @@
   "description": "A Tool to Check for Response Status Codes",
   "main": "index.js",
   "scripts": {
-    "archer": "node index.js --help"
+    "help": "node index.js --help"
   },
   "author": "0x9747 <0x9778@protonmail.com> (https://umairnehri.in/)",
   "license": "ISC",

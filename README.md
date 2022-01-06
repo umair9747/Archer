@@ -53,7 +53,7 @@
    ```sh
    cd Archer
    npm i
-   npm run archer
+   npm run help
    ```
   </p>
   
@@ -70,7 +70,7 @@
     git clone https://github.com/umair9747/Archer
     cd Archer
     npm i
-    npm run archer
+    npm run help
   ```
 </p>
 
