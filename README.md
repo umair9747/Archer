@@ -99,7 +99,7 @@
      Example: string/json
 
      EXAMPLE USAGE -- 
-     npm run start -- /home/user/Desktop/domains.txt 200 string
+     npm run archer -- /home/user/Desktop/domains.txt 200 string
   ```
   <b>NOTE: All flags are mandatory. Make sure that the links you provide have http:// or https:// added else Archer would return a "domain doesn't exist" error.</b>
 </p>
