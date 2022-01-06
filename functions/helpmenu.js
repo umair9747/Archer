@@ -6,7 +6,7 @@ function menu() {
   console.log(
     align(
       chalk.yellow(
-        "Usage: npm run archer -- [filename] [statuscodetoquery] [outputtype]"
+        "Usage: node index.js [filename] [statuscodetoquery] [outputtype]"
       ),
       5
     )
@@ -52,7 +52,7 @@ function menu() {
   console.log(
     align(
       chalk.magenta(
-        "npm run archer -- /home/user/Desktop/domains.txt 200 string"
+        "node index.js /home/user/Desktop/domains.txt 200 string"
       ),
       5
     )
