@@ -1,10 +1,11 @@
 //Import starts
+// vars are unscoped, better use const instead
 const figlet = require("figlet");
 const align = require("align-text");
 const chalk = require("chalk");
 //Import ends
 
-async function data() {
+function data() {
   figlet("-ARCHER->", (err, data) => {
     if (err) {
       console.log("Something went wrong...");
