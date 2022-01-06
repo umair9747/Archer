@@ -5,14 +5,13 @@ const createReadStream = require("fs").createReadStream;
 const request = require("request");
 const chalk = require("chalk");
 
-const statusCodePrint = (statuscode, response, line) => {
-  const op = `[+] ${line}:`;
-
+const statusCodePrint = async (statuscode, response, line) => {
+  const op = `[+] ${line}: `;
   switch (statuscode) {
-    case 200:
+    case "200":
       console.log(align(chalk.green(op) + response.statusCode, 5));
       break;
-    case 404:
+    case "404":
       console.log(align(chalk.red(op) + response.statusCode, 5));
       break;
     default:
@@ -39,15 +38,16 @@ function processStringOutput(file, statuscode) {
   });
 
   lineReader.on("line", (line) => {
-    request(line, (error, response) => {
+    const op = `[+] ${line}:`;
+    request(line, async (error, response) => {
       if (error) {
         console.log(align(`${chalk.red(op)} Error: domain doesn't exist`, 5));
       } else {
-        if (response.statusCode === statuscode) {
+        if (response.statusCode == statuscode) {
           //console.log(line + ":", response.statusCode);
-          statusCodePrint(statuscode, response, line);
+          await statusCodePrint(statuscode, response, line);
         } else if (statuscode == "any") {
-          statusCodePrint(response.statusCode, response, line);
+          await statusCodePrint(response.statusCode.toString(), response, line);
         }
       }
     });
@@ -68,7 +68,6 @@ function processJSONOutput(file, statuscode) {
 
 function processTargets(file, statuscode, output) {
   console.log(align(chalk.blue("Archer is starting...\n"), 5));
-  
   switch (output) {
     case "string":
       return processStringOutput(file, statuscode);
