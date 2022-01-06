@@ -1,101 +1,89 @@
-const align = require('align-text');
-const colors = require('colors');
+const align = require("align-text");
+const str2json = require("string-to-json");
+const createInterface = require("readline").createInterface;
+const createReadStream = require("fs").createReadStream;
+const request = require("request");
+const chalk = require("chalk");
 
-function processtargets(file, statuscode, output){
-    console.log(align("Archer is starting...".blue, 5));
-    console.log("");
-    //start of string
-    if (output == "string"){
-    var lineReader = require('readline').createInterface({
-        input: require('fs').createReadStream(file)
-      });
-      
-      lineReader.on('line', function (line) {
-        const request = require('request');
-        request(line, function (error, response, body) {
-            var op = "[+] " + line + " : ";
-         
-          if(error){
-            var coloredop = op.red;
-            console.log(align(coloredop + " domain doesn't exists", 5));
-          }
-          else{
-          if(response.statusCode == statuscode){
-            //console.log(line + ":", response.statusCode);
-            if(statuscode == 200){
-                var coloredop = op.green;
-                console.log(align(coloredop + response.statusCode, 5))
-            }
-            else if(statuscode == 404){
-                var coloredop = op.red;
-                console.log(align(coloredop + response.statusCode, 5))
-            }
-            else {
-                var coloredop = op.yellow;
-                console.log(align(coloredop + response.statusCode, 5))
-            }
-        }
+const statusCodePrint = (statuscode) => {
+  switch (statuscode) {
+    case 200:
+      console.log(align(op.green + response.statusCode, 5));
+      break;
+    case 404:
+      console.log(align(op.red + response.statusCode, 5));
+      break;
+    default:
+      console.log(align(op.yellow + response.statusCode, 5));
+  }
+};
 
-        else if(statuscode == "any"){
-            
-          if(response.statusCode == 200){
-            var coloredop = op.green;
-            console.log(align(coloredop + response.statusCode, 5))
-        }
-        else if(response.statusCode == 404){
-            var coloredop = op.red;
-            console.log(align(coloredop + response.statusCode, 5))
-        }
-        else {
-            var coloredop = op.yellow;
-            console.log(align(coloredop + response.statusCode, 5))
-        }
+const requestOutputProcess = (line, error, response, statuscode) => {
+  let output = {
+    target: line,
+    response,
+  };
 
+  if (error) output.response = "Error: domain doesn't exist";
+  else if (response.statusCode === statuscode || statuscode === "any")
+    output.response = response.statusCode;
+
+  return str2json.convert(output);
+};
+
+function processStringOutput(file, statuscode) {
+  const lineReader = createInterface({
+    input: createReadStream(file),
+  });
+
+  lineReader.on("line", (line) => {
+    request(line, (error, response) => {
+      const op = `[+] ${line}:`;
+      if (error) {
+        console.log(align(`${op.red} Error: domain doesn't exist`, 5));
+      } else {
+        if (response.statusCode === statuscode) {
+          //console.log(line + ":", response.statusCode);
+          statusCodePrint(statuscode);
+        } else if (statuscode == "any") {
+          statusCodePrint(response.statusCode);
         }
       }
-
-        
-        });
-      });
-    }
-    //end of string
-
-    //start of json
-    else if (output == "json"){
-        var lineReader = require('readline').createInterface({
-            input: require('fs').createReadStream(file)
-          });
-          
-          lineReader.on('line', function (line) {
-            const request = require('request');
-            request(line, function (error, response, body) {
-              if(error){
-                var str2json = require('string-to-json');
-                var output = str2json.convert({"target":line, "response":"domain doesn't exists"});
-                console.log(output);
-              }
-              else{
-                   if(response.statusCode == statuscode){
-                var str2json = require('string-to-json');
-                var output = str2json.convert({"target":line, "response":response.statusCode});
-                  
-                console.log(output);
-                   }
-                   else if (statuscode == "any"){
-                    var str2json = require('string-to-json');
-                    var output = str2json.convert({"target":line, "response":response.statusCode});
-                      
-                    console.log(output);
-                   }
-              }
-            });
-          });
-        }
-
-    else if (output != "json" && output != "string"){
-        console.log(align("Please make sure you are using the correct arguments!".red ,5));
-        console.log(align("Refer to the help menu (--help or -h) for more details".red, 5));
-    }
+    });
+  });
 }
 
-module.exports = {processtargets};
+function processJSONOutput(file, statuscode) {
+  const lineReader = createInterface({
+    input: createReadStream(file),
+  });
+
+  lineReader.on("line", (line) => {
+    request(line, (error, response) =>
+      console.log(requestOutputProcess(line, error, response, statuscode))
+    );
+  });
+}
+
+function processTargets(file, statuscode, output) {
+  console.log(align(chalk.blue("Archer is starting...\n"), 5));
+
+  switch (output) {
+    case "string":
+      return processStringOutput(file, statuscode);
+    case "json":
+      return processJSONOutput(file, statuscode);
+    default:
+      console.log(
+        align(
+          chalk.red(
+            "Please make sure you are using the correct arguments!\n \
+          Refer to the help menu (--help or -h) for more details"
+          ),
+          5
+        )
+      );
+  }
+}
+
+module.exports = { processTargets };
