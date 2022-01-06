@@ -5,3 +5,4 @@ https://apple.com
 https://microsoft.com
 https://howtogeek.com/wp-content/uploads/2018/06/
 https://www.google.com/example
+https://unexistentdomain.main/
