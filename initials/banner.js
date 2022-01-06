@@ -12,7 +12,7 @@ async function data() {
       return;
     }
     console.log(align(chalk.green(data), 12));
-    console.log(align("A Tool to Check for Response Status Codes", 15));
+    console.log(align(chalk.green("A Tool to Check for Response Status Codes"), 15));
     console.log(align(chalk.green("Developed by Umair Nehri (0x9747)\n"), 32));
     console.log(
       align(

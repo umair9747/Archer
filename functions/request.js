@@ -8,13 +8,13 @@ const chalk = require("chalk");
 const statusCodePrint = (statuscode) => {
   switch (statuscode) {
     case 200:
-      console.log(align(op.green + response.statusCode, 5));
+      console.log(align(chalk.green(op) + response.statusCode, 5));
       break;
     case 404:
-      console.log(align(op.red + response.statusCode, 5));
+      console.log(align(chalk.red(op) + response.statusCode, 5));
       break;
     default:
-      console.log(align(op.yellow + response.statusCode, 5));
+      console.log(align(chalk.yellow(op) + response.statusCode, 5));
   }
 };
 
@@ -40,7 +40,7 @@ function processStringOutput(file, statuscode) {
     request(line, (error, response) => {
       const op = `[+] ${line}:`;
       if (error) {
-        console.log(align(`${op.red} Error: domain doesn't exist`, 5));
+        console.log(align(`${chalk.red(op)} Error: domain doesn't exist`, 5));
       } else {
         if (response.statusCode === statuscode) {
           //console.log(line + ":", response.statusCode);
