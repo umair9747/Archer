@@ -83,7 +83,6 @@
  ```sh
     Archer V1.0
      Usage: node index.js [filename] [statuscodetoquery] [outputtype]
-     (The two dashes after 'start' are required.)
 
      FILENAME --
      Specifies the file name containing the domain list along with its full location
