@@ -1,6 +1,3 @@
-function input(){
-    var myArgs = process.argv.slice(2);
-    return myArgs;
-}
+const input = () => process.argv.slice(2);
 
-module.exports = {input};
+module.exports = { input };
