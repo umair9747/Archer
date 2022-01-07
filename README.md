@@ -103,6 +103,19 @@
   <b>NOTE: All flags are mandatory. Make sure that the links you provide have http:// or https:// added else Archer would return a "domain doesn't exist" error.</b>
 </p>
 
+  <h2 align="left">
+  <b>Reach Out!</b>
+ </h2>
+
+<p align="left">
+  You can contact me through the following handles:
+  <ul type="disc">
+    <li> <b>Instagram</b> - @umairnehri</li>
+    <li> <b>Twitter</b> - @0x9747</li>
+    <li> <b>Discord</b> - Umair#5710 </li>
+    <li> <b>Email</b> - 0x9778@protonmail.com </li>
+    </ul>
+  </p>
 
  <h2 align="left">
   <b>Wlling to Contribute?</b>
@@ -117,16 +130,10 @@
     </ul>
   </p>
   
-  <h2 align="left">
-  <b>Reach Out!</b>
+ <h2 align="left">
+  <b>Past Contributors</b>
  </h2>
 
 <p align="left">
-  You can contact me through the following handles:
-  <ul type="disc">
-    <li> <b>Instagram</b> - @umairnehri</li>
-    <li> <b>Twitter</b> - @0x9747</li>
-    <li> <b>Discord</b> - Umair#5710 </li>
-    <li> <b>Email</b> - 0x9778@protonmail.com </li>
-    </ul>
-  </p>
+<img src="https://avatars.githubusercontent.com/u/43090614?v=4" height="100" width="100">
+</p>
