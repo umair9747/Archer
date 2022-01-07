@@ -46,14 +46,14 @@
 <p align="left">
   <b>Note: </b><br>
   <ul type="disc">
-    <li>Make sure you have Nodejs installed on your system, which you can do by going to https://nodejs.org/en/download/</li>
+    <li>Make sure you have NodeJS installed on your system, which you can do by going to https://nodejs.org/en/download/</li>
     <li>Clone / Download the repository to your local machine and run the following commands:</li>
    </ul>
    
    ```sh
    cd Archer
    npm i
-   node index.js
+   npm run help
    ```
   </p>
   
@@ -64,13 +64,13 @@
 <p align="left">
   
  ```sh
-    sudo apt-get update -y && sudo apt-get upgrade -y
-    sudo apt-get install nodejs -y
-    sudo apt-get install git -y
+    sudo apt update -y && sudo apt upgrade -y
+    sudo apt install nodejs -y
+    sudo apt install git -y
     git clone https://github.com/umair9747/Archer
     cd Archer
     npm i
-    node index.js
+    npm run help
   ```
 </p>
 
@@ -91,7 +91,7 @@
 
      STATUS CODE TO QUERY --
      Specifies the status codes you would like to be displayed
-     Example: 200/404/302/all
+     Example: 200/404/302/any
 
      OUTPUT TYPE --
      Specifies the format for the output which will be displayed
@@ -100,7 +100,7 @@
      EXAMPLE USAGE -- 
      node index.js /home/user/Desktop/domains.txt 200 string
   ```
-  <b>NOTE: All flags are mandatory. Make sure that the links you provide have http:// or https:// added else Archer would return a "domain doesn't exists" error.</b>
+  <b>NOTE: All flags are mandatory. Make sure that the links you provide have http:// or https:// added else Archer would return a "domain doesn't exist" error.</b>
 </p>
 
 

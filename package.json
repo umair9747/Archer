@@ -4,12 +4,13 @@
   "description": "A Tool to Check for Response Status Codes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "help": "node index.js --help"
   },
   "author": "0x9747 <0x9778@protonmail.com> (https://umairnehri.in/)",
   "license": "ISC",
   "dependencies": {
     "align-text": "^1.0.2",
+    "chalk": "^4.1.2",
     "colors": "^1.4.0",
     "figlet": "^1.5.0",
     "readline": "^1.3.0",
