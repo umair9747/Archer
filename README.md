@@ -135,5 +135,5 @@
  </h2>
 
 <p align="left">
-<img src="https://avatars.githubusercontent.com/u/43090614?v=4" height="100" width="100">
+<img src="https://avatars.githubusercontent.com/u/43090614?v=4" height="100" width="100" style="border-radius: 15px;">
 </p>
