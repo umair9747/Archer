@@ -41,7 +41,7 @@ function menu() {
   console.log(align(chalk.green("OUTPUT TYPE --"), 5));
   console.log(
     align(
-      chalk.blue("Specifies the format for the output which will be displayed"),
+      chalk.blue("Specifies the format for the output which will be displayed by archer."),
       5
     )
   );
