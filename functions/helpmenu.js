@@ -52,7 +52,7 @@ function menu() {
   console.log(
     align(
       chalk.magenta(
-        "node index.js /home/user/Desktop/domains.txt 200 string"
+        "node index.js /home/user/Desktop/alldomains.txt 200 string"
       ),
       5
     )
