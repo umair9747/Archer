@@ -12,7 +12,7 @@
     "align-text": "^1.0.2",
     "chalk": "^4.1.2",
     "colors": "^1.4.0",
-    "figlet": "^1.5.2",
+    "figlet": "^1.6.0",
     "readline": "^1.3.0",
     "request": "^2.88.2",
     "string-to-json": "^0.1.0"
